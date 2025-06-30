@@ -86,7 +86,7 @@ export default function Skills() {
             {...pulseBorder}
             className="relative rounded-2xl p-6 text-center bg-white border border-blue-300"
           >
-            <div className="text-4xl mb-3">{skill.icon}</div>
+            <div className="text-4xl flex justify-center items-center">{skill.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{skill.name}</h3>
             <p className="text-gray-600 text-sm">{skill.description}</p>
           </motion.div>

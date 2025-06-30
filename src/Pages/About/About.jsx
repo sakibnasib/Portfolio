@@ -5,14 +5,14 @@ import {
 import { SiMongodb, SiExpress, SiFirebase, SiTailwindcss  } from "react-icons/si";
 
 const skills = [
-  { icon: <FaHtml5 className="text-orange-600" />, name: "HTML" },
-  { icon: <FaCss3Alt className="text-blue-500" />, name: "CSS" },
-  { icon: <FaJs className="text-yellow-400" />, name: "JavaScript" },
-  { icon: <FaReact className="text-cyan-400" />, name: "React" },
-  { icon: <SiExpress className="text-gray-800" />, name: "Express" },
-  { icon: <SiMongodb className="text-green-500" />, name: "MongoDB" },
-  { icon: <SiFirebase className="text-yellow-500" />, name: "Firebase" },
-  { icon: <SiTailwindcss className="text-sky-400" />, name: "TailwindCSS" },
+  { icon: <FaHtml5 className="text-orange-600" size={30} />, name: "HTML" },
+  { icon: <FaCss3Alt className="text-blue-500" size={30}/>, name: "CSS" },
+  { icon: <FaJs className="text-yellow-400" size={30}/>, name: "JavaScript" },
+  { icon: <FaReact className="text-cyan-400"size={30} />, name: "React" },
+  { icon: <SiExpress className="text-gray-800"size={30} />, name: "Express" },
+  { icon: <SiMongodb className="text-green-500"size={30} />, name: "MongoDB" },
+  { icon: <SiFirebase className="text-yellow-500"size={30} />, name: "Firebase" },
+  { icon: <SiTailwindcss className="text-sky-400" size={30}/>, name: "TailwindCSS" },
 ];
 
 const About = () => {

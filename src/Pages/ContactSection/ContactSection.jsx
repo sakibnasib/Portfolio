@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 export default function ContactSection() {
   const formRef = useRef();
@@ -20,13 +21,19 @@ export default function ContactSection() {
         "AeB9bvKwr_TnqQAkR"     // Replace with your EmailJS public key
       )
       .then(
-        (result) => {
-          alert("Message sent successfully! 🎉",result);
+        () => {
+          Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Message sent successfully! 🎉",
+  showConfirmButton: false,
+  timer: 1500
+});
           setLoading(false);
           e.target.reset();
         },
-        (error) => {
-          alert("Failed to send message, please try again.",error.text);
+        () => {
+          // alert("Failed to send message, please try again.",error.text);
           setLoading(false);
         }
       );

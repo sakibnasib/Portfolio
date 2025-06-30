@@ -89,9 +89,9 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <p className="  text-xl rounded-full"> 
+        <Link to='' className="  text-xl rounded-full"> 
          <img src="https://i.ibb.co/3525vR0T/images-2.png" className="w-15 h-12 rounded-full" alt="" />
-        </p>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

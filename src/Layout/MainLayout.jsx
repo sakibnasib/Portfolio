@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../Component/NavBar/Navbar';
 import { Outlet } from 'react-router';
-import Fotter from '../Component/Fotter/Fotter'
 const MainLayout = () => {
     return (
         <>
@@ -12,7 +11,7 @@ const MainLayout = () => {
             <div className="overflow-hidden">
                 <Outlet></Outlet>
             </div>
-         <Fotter></Fotter>
+        
         </>
     );
 };
