@@ -5,26 +5,23 @@ const education = [
   {
     title: "B.A in Political Science",
     school: "National University",
-    date: "2019 – 2023",
     icon: "🎓",
   },
   {
     title: "HSC - Humanities",
     school: "Nachole Govt.College",
-    date: "2016 – 2018",
     icon: "🏫",
   },
   {
     title: "SSC - Science",
     school: "Nachole Pilot High School",
-    date: "2014 – 2016",
     icon: "🏫",
   },
 ];
 
 export default function EducationTimeline() {
   return (
-    <section className="min-h-screen bg-base-300 text-white py-24 px-6 mt-10 rounded-2xl">
+    <section className="min-h-screen bg-base-200 text-white py-24 px-6 mt-10 rounded-2xl">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-bold text-center mb-20 text-primary drop-shadow-lg">
           🎓 My Education
@@ -51,7 +48,6 @@ export default function EducationTimeline() {
                   {item.title}
                 </h3>
                 <p className="text-lg">{item.school}</p>
-                <p className="text-sm text-gray-400">{item.date}</p>
               </div>
             </motion.div>
           ))}

@@ -76,7 +76,7 @@ const pulseBorder = {
 
 export default function Skills() {
   return (
-    <div className="py-16 bg-gray-100 mt-10 rounded-2xl">
+    <div className="py-16 bg-base-200  mt-10 rounded-2xl">
       <h2 className="text-3xl font-bold text-center mb-12">My Skills</h2>
       <div data-aos="fade-up"
      data-aos-duration="3000" className="grid gap-8 px-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto">

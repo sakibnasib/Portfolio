@@ -161,7 +161,7 @@ const Navbar = () => {
        {/*  */}
        
     <Link 
-      to="" 
+      to="https://drive.google.com/file/d/1x4IBzXIM7sSKfw0ubT0bFAX9J7oSNQ-W/view?usp=sharing" 
       download 
       class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
     >

@@ -4,6 +4,34 @@ import { Link } from "react-router";
 const projects = [
   {
     id: 1,
+    title: "🏟️ CourtConnect",
+    images: [
+      "https://i.ibb.co/vxmWj7m2/Screenshot-2025-07-24-230031.png",
+      "https://i.ibb.co/24VDcMG/Screenshot-2025-07-24-224502.png",
+      "https://i.ibb.co/BVGYJ0nK/Screenshot-2025-07-24-224246.png",
+    ],
+    tech: [
+      "ReactJS",
+      "Tailwind CSS",
+      "Firebase Auth",
+      "ExpressJS",
+      "MongoDB",
+      "Stripe",
+      "Google Charts",
+      "React Query",
+      "Axios",
+      "Framer Motion",
+    ],
+    live: "https://courtconnect-fe336.web.app/",
+    github: "https://github.com/sakibnasib/CourtConnect",
+    github2: "https://github.com/sakibnasib/courtconnect-server",
+    description:
+      "CourtConnect is a full-stack web platform that enables users to book sports courts (like tennis, badminton, football, etc.) online. With role-based dashboards (admin/member/user), real-time court availability, and Stripe-integrated payments, it ensures a smooth booking experience.",
+    challenges:
+      "This project challenged me with building role-based access control, real-time filtering and booking logic, payment processing with Stripe, and data visualization using charts. I learned a lot about managing authenticated REST APIs and scaling a full-stack app for multiple user roles.",
+  },
+  {
+    id: 2,
     title: "🥗 SafeBite",
     images: [
       "https://i.ibb.co/Q3jVrgBw/LCWUWBuvi6.jpg",
@@ -17,21 +45,22 @@ const projects = [
       "MongoDB",
       "Tailwind CSS",
       "cors",
-      "js",
-      "FireBseAdmin",
+      "JavaScript",
+      "Firebase Admin",
       "Framer Motion",
       "Axios",
     ],
     live: "https://safebite-aac87.web.app/",
-    github: "https://i.ibb.co/W4SrkLpW/Screenshot-2025-06-28-160418.png",
-    github2: "https://github.com/sakibnasib/SafeBits",
+    github: "https://github.com/sakibnasib/SafeBite-Client",
+    github2:
+      "https://github.com/sakibnasib/SafeBite-Client",
     description:
-      "SafeBite is a web application designed to help users track their food items and reduce food waste. It notifies users when their food is nearing expiry and showcases expired items, promoting better food management and sustainability.",
+      "SafeBite is a web application that helps users track food items and reduce waste. It notifies users when food is nearing expiry, showcases expired items, and promotes better food management and sustainability.",
     challenges:
-      "This is my second project to manage Server  and  Client i am doing this project while doing this project I am facing these Track expiry dates JWT Auth Search and Filter (by category/title) Countdown Timer to expiry problems I know I have to improve in many things Inshallah I can do it  chake spling and conversion",
+      "I faced challenges with tracking expiry dates, implementing JWT authentication, building search and filter functionality by category/title, and creating a countdown timer to expiry. It helped me learn more about real-time logic and user reminders.",
   },
   {
-    id: 2,
+    id: 3,
     title: "🏠 FindMyRoom",
     images: [
       "https://i.ibb.co/hFytfRS8/Screenshot-2025-06-28-155520.png",
@@ -45,87 +74,76 @@ const projects = [
       "MongoDB",
       "Tailwind CSS",
       "cors",
-      "js",
+      "JavaScript",
     ],
     live: "https://findmyroom-d1044.web.app/",
     github: "https://github.com/sakibnasib/FindMyroom",
     github2: "https://github.com/sakibnasib/FindMyRoom-Server",
     description:
-      "AboutfindeMyroom is a full-featured roommate and rental discovery platform built with modern technologies.",
+      "FindMyRoom is a full-featured roommate and rental discovery platform built with modern web technologies. It connects people looking for rooms or roommates.",
     challenges:
-      "This is my first backend project using a database. It seems a bit difficult to fetch data using different queries or IDs and to delete or edit the data I have created, but I can do it from different documents and by following Google.",
-  },
-  {
-    id: 3,
-    title: "Bill Management Website 💳",
-    images: [
-      "https://i.ibb.co/B5V1rTW3/Screenshot-2025-06-29-003746.png",
-      "https://i.ibb.co/QFNS4BFT/Screenshot-2025-06-29-003802.png",
-      "https://i.ibb.co/xq0Cc1zD/Screenshot-2025-06-29-003835.png",
-    ],
-    tech: ["ReactJS", "Firebase", "Tailwind CSS", "SwiperJS "],
-    live: "paybill-cc30d.web.app/",
-    github: "https://github.com/sakibnasib/PayBill",
-    github2: "https://github.com/sakibnasib/PayBill",
-    description:
-      "A modern and responsive Bill Management web application that allows users to view and pay utility bills using their available balance. It features secure authentication, dynamic bill filtering, balance deduction on payment, and profile management.",
-    challenges:
-      "This is my first project made with Fyabaze. At first there were problems, but later they were solved. I can overcome them. I still have a lot of things to improve.",
+      "This was my first backend project using a database. I found it tricky to fetch, update, and delete data correctly using IDs and Mongo queries, but I learned a lot from documentation and debugging.",
   },
 ];
 
 export default function ProjectCardSection() {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [imageIndex, setImageIndex] = useState(0);
+  const [imageIndices, setImageIndices] = useState({});
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setImageIndex((prev) => (prev + 1) % projects[0].images.length);
+      setImageIndices((prev) => {
+        const updated = {};
+        projects.forEach((project) => {
+          const current = prev[project.id] || 0;
+          updated[project.id] = (current + 1) % project.images.length;
+        });
+        return updated;
+      });
     }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-10 mt-10 rounded-2xl">
+    <section className="max-w-7xl mx-auto px-4 py-10 mt-10">
       <h1 className="text-3xl font-bold mb-8 text-center text-primary">
         My Projects
       </h1>
 
-      <div data-aos="zoom-out-up" className="flex flex-col gap-12 ">
+      <div data-aos="zoom-in-right" className="flex flex-col gap-12">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="w-full bg-base-300 rounded-3xl shadow-md overflow-hidden border border-gray-200  p-3"
+            className="bg-base-200 rounded-3xl shadow-md border border-gray-200 p-4"
           >
-            <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col lg:flex-row gap-4">
+              {/* Image */}
               <div className="lg:w-1/2 w-full h-64">
                 <img
-                  src={project.images[imageIndex]}
+                  src={
+                    project.images[imageIndices[project.id] || 0] ??
+                    project.images[0]
+                  }
                   alt={project.title}
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
 
-              {/* Content Section */}
-              <div className="lg:w-1/2 w-full p-6 flex flex-col justify-between">
+              {/* Content */}
+              <div className="lg:w-1/2 w-full flex flex-col justify-between gap-4">
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                  <h2 className="text-2xl font-semibold text-gray-800 mb-3">
                     {project.title}
                   </h2>
-
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="badge badge-secondary"
-                      >
+                      <span key={idx} className="badge badge-secondary">
                         {tech}
                       </span>
                     ))}
                   </div>
-
-                  <p className="text-sm text-gray-600 mb-4">
-                    {project.description}
+                  <p className="text-sm text-gray-600">
+                    {project.description.slice(0, 150)}...
                   </p>
                 </div>
 
@@ -144,16 +162,18 @@ export default function ProjectCardSection() {
                     rel="noopener noreferrer"
                     className="btn btn-sm btn-outline"
                   >
-                    GitHubCliend
+                    GitHub Client
                   </Link>
-                  <Link
-                    to={project.github2}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-sm btn-outline"
-                  >
-                    GitHubServer
-                  </Link>
+                  {project.github2 && (
+                    <Link
+                      to={project.github2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-sm btn-outline"
+                    >
+                      GitHub Server
+                    </Link>
+                  )}
                   <button
                     onClick={() => setSelectedProject(project)}
                     className="btn btn-sm btn-secondary"
@@ -169,22 +189,65 @@ export default function ProjectCardSection() {
 
       {/* Modal */}
       {selectedProject && (
-        <dialog id="details_modal" className="modal modal-open">
-          <div className="modal-box max-w-2xl max-h-[90vh] overflow-y-auto">
-            <h3 className="text-xl font-bold mb-3 text-primary">
+        <dialog open className="modal modal-open backdrop-blur-sm bg-black/30 z-50">
+          <div className="modal-box max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-xl">
+            <h3 className="text-2xl font-bold mb-4 text-primary">
               {selectedProject.title}
             </h3>
-            <p className="mb-4 text-gray-700">{selectedProject.description}</p>
-            <h4 className="text-xl font-semibold mb-1 text-primary">
-              Challenges I faced:
-            </h4>
-            <p className="text-sm text-gray-600">
-              {selectedProject.challenges}
-            </p>
 
-            <div className="modal-action">
+            {/* Image Slider */}
+            <div className="flex overflow-x-auto gap-4 mb-6 rounded-xl">
+              {selectedProject.images.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`Screenshot ${i + 1}`}
+                  className="h-48 w-auto rounded-xl shadow-md"
+                />
+              ))}
+            </div>
+
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-800 mb-1">Description</h4>
+              <p className="text-sm text-gray-600">{selectedProject.description}</p>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-800 mb-1">Challenges Faced</h4>
+              <p className="text-sm text-gray-600 whitespace-pre-wrap">
+                {selectedProject.challenges}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={selectedProject.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-sm btn-primary"
+              >
+                Live Site
+              </a>
+              <a
+                href={selectedProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-sm btn-outline"
+              >
+                GitHub Client
+              </a>
+              {selectedProject.github2 && (
+                <a
+                  href={selectedProject.github2}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm btn-outline"
+                >
+                  GitHub Server
+                </a>
+              )}
               <button
-                className="btn btn-sm"
+                className="btn btn-sm btn-neutral ml-auto"
                 onClick={() => setSelectedProject(null)}
               >
                 Close

@@ -40,7 +40,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="min-h-screen mt-10  bg-base-300 py-24 px-6 rounded-2xl">
+    <section className="min-h-screen mt-10  bg-base-200 py-24 px-6 rounded-2xl">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
         {/* LEFT: Contact Info */}
         <motion.div
