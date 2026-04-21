@@ -4,7 +4,7 @@ import {
 import Home from "../Layout/Home";
 import MainLayout from "../Layout/MainLayout";
 import About from "../Pages/About/About";
-import Skills from "../Pages/skills/Skills";
+import Skills from "../Pages/Skills/Skills";
 import ProjectCardSection from "../Pages/ProjectCardSectio/ProjectCardSectio";
 import EducationTimeline from "../Pages/Education/Education";
 import ContactSection from "../Pages/ContactSection/ContactSection";
