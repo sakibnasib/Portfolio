@@ -94,7 +94,7 @@ const education = [
 
 export default function EducationTimeline() {
   return (
-    <section className="relative py-24 px-6 max-w-5xl mx-auto overflow-hidden">
+    <section className="relative md:py-18 lg:py-24 sm:py-10 px-6  max-w-5xl mx-auto overflow-hidden">
       
       {/* 1. HEADER */}
       <div className="text-center mb-20">

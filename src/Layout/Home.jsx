@@ -84,7 +84,7 @@ const Home = () => {
     return (
         <div className="relative">
             {/* Added container spacing to keep the layout clean */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-24 md:space-y-32 py-10">
+            <div className="container mx-auto px-4 sm-px-0 lg:px-8 space-y-24 md:space-y-32 ">
                 <div>
                     <Hero />
                 </div>

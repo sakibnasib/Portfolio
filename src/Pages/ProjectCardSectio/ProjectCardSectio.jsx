@@ -282,7 +282,7 @@
 
 
 
-"use client";
+
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -301,7 +301,7 @@ const projects = [
     ],
     tech: ["ReactJS", "Tailwind CSS", "Firebase", "ExpressJS", "MongoDB", "Stripe"],
     live: "https://courtconnect-fe336.web.app/",
-    github: "https://github.com/sakibnasib/CourtConnect",
+    github1: "https://github.com/sakibnasib/CourtConnect",
     github2: "https://github.com/sakibnasib/courtconnect-server",
     description: "Full-stack sports court booking platform featuring role-based dashboards, real-time availability, and Stripe payments.",
     challenges: "Implemented complex role-based access control and real-time booking synchronization across multiple user types.",
@@ -315,7 +315,7 @@ const projects = [
     ],
     tech: ["ReactJS", "Firebase", "ExpressJS", "MongoDB", "Tailwind", "Axios"],
     live: "https://foodtracking-29898.web.app/",
-    github: "https://github.com/sakibnasib/FoodTracking-Client",
+    github1: "https://github.com/sakibnasib/FoodTracking-Client",
     github2: "https://github.com/sakibnasib/FoodTracking-Server",
     description: "Sustainability app helping users reduce food waste via expiry notifications and inventory management.",
     challenges: "Engineered a custom date-tracking logic system and automated notifications for item expiry.",
@@ -329,7 +329,7 @@ const projects = [
     ],
     tech: ["ReactJS", "Firebase", "ExpressJS", "MongoDB", "Tailwind CSS"],
     live: "https://findmyroom-d1044.web.app/",
-    github: "https://github.com/sakibnasib/FindMyroom",
+    github1: "https://github.com/sakibnasib/FindMyroom",
     github2: "https://github.com/sakibnasib/FindMyRoom-Server",
     description: "A specialized platform connecting people looking for roommates with a streamlined search interface.",
     challenges: "Mastered MongoDB CRUD operations and implemented multi-criteria search filtering for the first time.",
@@ -357,7 +357,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
       className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 lg:gap-20 items-center mb-32`}
     >
       {/* 1. IMAGE SIDE (Browser Frame) */}
-      <div className="w-full lg:w-3/5 group relative">
+      <div className="w-full lg:w-2/5 group relative">
         <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
         
         <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-2xl">
@@ -387,7 +387,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
             {/* Quick Actions Hover */}
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
                <Link to={project.live} target="_blank" className="p-3 bg-white text-black rounded-full hover:scale-110 transition"><FaExternalLinkAlt size={18}/></Link>
-               <Link to={project.github} target="_blank" className="p-3 bg-black text-white border border-white/20 rounded-full hover:scale-110 transition"><FaGithub size={18}/></Link>
+               
             </div>
           </div>
         </div>
@@ -424,10 +424,20 @@ const ProjectCard = ({ project, index, onOpen }) => {
              View Details <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
            </button>
            <div className="h-1 w-1 rounded-full bg-white/20"></div>
-           <Link to={project.github} target="_blank" className="text-white/30 hover:text-white transition">
+          <span className="text-xs">
+             <Link to={project.github1} target="_blank" className="text-white/30 hover:text-white transition">
+             <FaGithub size={22}/>
+             Client 
+           </Link>
+          </span>
+           <span className="text-xs">
+             <Link to={project.github2} target="_blank" className="text-white/30 hover:text-white transition">
              <FaGithub size={22}/>
            </Link>
+           server
+           </span>
         </div>
+        
       </div>
     </motion.div>
   );
@@ -437,7 +447,7 @@ export default function ProjectSection() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden">
+    <section className="lg:py-24 md:py-18 sm:py-5 px-6 max-w-7xl mx-auto relative overflow-hidden">
       {/* Title */}
       <div className="text-center mb-24">
         <h2 className="text-xs font-black text-white/20 uppercase tracking-[0.5em] mb-4">Portfolio</h2>
@@ -501,7 +511,8 @@ export default function ProjectSection() {
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white/5">
                    <Link to={selectedProject.live} target="_blank" className="flex-1 py-4 bg-white text-black text-center font-bold rounded-2xl hover:bg-cyan-50 transition">Visit Live Website</Link>
-                   <Link to={selectedProject.github} target="_blank" className="flex-1 py-4 bg-white/5 border border-white/10 text-white text-center font-bold rounded-2xl hover:bg-white/10 transition">Source Code</Link>
+                    <Link to={selectedProject.github1} target="_blank" className="flex-1 py-4 bg-white/5 border border-white/10 text-white text-center font-bold rounded-2xl hover:bg-white/10 transition">Source Code Client Side</Link>  
+                   <Link to={selectedProject.github2} target="_blank" className="flex-1 py-4 bg-white/5 border border-white/10 text-white text-center font-bold rounded-2xl hover:bg-white/10 transition">Source Code server Side</Link>
                 </div>
               </div>
             </motion.div>

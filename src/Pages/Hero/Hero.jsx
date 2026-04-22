@@ -318,7 +318,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router'; // Changed to react-router-dom for standard usage
+import { Link } from 'react-router'; 
 import { TypeAnimation } from 'react-type-animation';
 
 const socialLinks = [
@@ -350,7 +350,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 pt-5 pb-5 relative z-10">
+    <div className="flex flex-col items-center justify-center sm:px-2 lg:px-6 md:px-6 pt-5 lg:pb-5 sm:pb-2 relative z-10">
       
       {/* 1. PROFILE IMAGE WITH SPINNING GLOW */}
       <div className={`group relative mb-10 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>

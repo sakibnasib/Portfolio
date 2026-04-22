@@ -149,7 +149,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 px-6 py-4 transition-all duration-300">
       <div 
-        className={`max-w-6xl mx-auto flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${
+        className={`max-w-7xl mx-auto flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${
           scrolled 
           ? "bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 shadow-2xl" 
           : "bg-transparent border border-transparent"
@@ -223,7 +223,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-20 left-6 right-6 lg:hidden bg-[#0a0a0a]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-3xl z-[101]"
+            className="absolute top-20 left-6 right-6 lg:hidden bg-[#0a0a0a]/95 backdrop-blur-2xl border border-white/10 rounded-3xl  shadow-3xl z-[101]"
           >
             <ul className="flex flex-col gap-6 items-center">
               {navItems.map(({ to, label }) => (

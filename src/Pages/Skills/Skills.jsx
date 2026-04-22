@@ -261,7 +261,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="relative py-32 px-6 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative md:py-32 sm-20  lg:py-32  px-6 max-w-7xl mx-auto overflow-hidden">
       {/* Background Decorative Text */}
       <div className="absolute top-10 left-10 text-[10vw] font-black text-white/[0.01] select-none pointer-events-none uppercase">
         Stack

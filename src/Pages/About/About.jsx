@@ -111,7 +111,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative py-24 px-6 max-w-6xl mx-auto overflow-hidden">
+    <section className="relative lg:py-24 md:py-24  px-4 max-w-6xl mx-auto overflow-hidden">
       
       {/* 1. SECTION HEADER */}
       <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

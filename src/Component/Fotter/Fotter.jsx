@@ -59,6 +59,7 @@
 
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -87,9 +88,9 @@ export default function Footer() {
           {/* SOCIAL */}
           <div className="flex items-center gap-3">
             <SocialCircle to="https://github.com/sakibnasib" icon={<FaGithub />} label="GitHub" />
-            <SocialCircle to="https://linkedin.com/in/sakibnasib" icon={<FaLinkedinIn />} label="LinkedIn" />
+            <SocialCircle to="https://linkedin.com/in/sakib-nasib-a13260335" icon={<FaLinkedinIn />} label="LinkedIn" />
            
-            <SocialCircle to="https://facebook.com" icon={<FaFacebookF />} label="Facebook" />
+            <SocialCircle to="https://facebook.com/profile.php?id=61584962325153" icon={<FaFacebookF />} label="Facebook" />
           </div>
 
           {/* COPYRIGHT */}
@@ -111,8 +112,8 @@ export default function Footer() {
 
 /* SOCIAL ICON COMPONENT */
 const SocialCircle = ({ to, icon, label }) => (
-  <a
-    href={to}
+  <Link
+   to={to}
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
@@ -124,5 +125,5 @@ const SocialCircle = ({ to, icon, label }) => (
     <span className="relative z-10 text-lg">
       {icon}
     </span>
-  </a>
+  </Link>
 );
